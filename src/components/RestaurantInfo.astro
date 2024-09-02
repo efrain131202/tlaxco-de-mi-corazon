@@ -1,42 +1,67 @@
+---
+import { info } from "../scripts/data";
+---
+
 <div class="restaurant-info">
     <p>
-        Aquí se come como en casa pero
-        sin tener que lavar los platos.
-        Tlaxco de mi Corazón restaurante & Café
-        ofrece desayunos que van desde huevos revueltos
-        y omelettes hasta especialidades como chilaquiles y enchiladas.
-        También encontrarás sándwiches, molletes y tostas,
-        acompañados por frappés, licuados, jugos y una
-        variedad de cafés. El menú se completa con
-        opciones dulces como pan artesanal y bowls
-        de frutas. Cada platillo es preparado al momento,
-        asegurando frescura en cada bocado.
+        { info } 
+        <span> 
+            <a href="https://www.google.com/maps?ll=19.61466,-98.120523&z=14&t=m&hl=es&gl=MX&mapclient=embed&cid=9029718700402898601" target="_blank" rel="noopener noreferrer">
+                <img src="/svg/ArrowUpRight.svg" alt="Ver en Google Maps" class="info-icon">
+            </a>
+        </span>
     </p>
 </div>
+
 <style>
     .restaurant-info {
         background-color: #f9f9f9;
         padding: 40px;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .restaurant-info p {
         font-size: 20px;
         line-height: 1.6;
         max-width: 800px;
-        margin: 0 auto;
+        margin: 0;
         font-family: "Big Shoulders Text", cursive;
+    }
+
+    .restaurant-info .info-icon {
+        width: 25px; 
+        height: 25px;
+        margin-left: 5px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: brightness(0.8);
+        vertical-align: middle;
+    }
+
+    .restaurant-info a:hover .info-icon {
+        transform: scale(1.1);
+        filter: brightness(1);
     }
 
     @media (max-width: 768px) {
         .restaurant-info p {
             font-size: 16px;
         }
+        .restaurant-info .info-icon {
+            width: 20px;
+            height: 20px;
+        }
     }
 
     @media (max-width: 480px) {
         .restaurant-info p {
             font-size: 14px;
+        }
+        .restaurant-info .info-icon {
+            width: 15px;
+            height: 15px;
         }
     }
 </style>
